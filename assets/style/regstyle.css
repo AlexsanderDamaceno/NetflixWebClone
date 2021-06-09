@@ -1,0 +1,131 @@
+html , 
+body{
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+h2 {
+    text-align: center;  
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+   
+}
+
+.signInContainer{
+    background-color:  #c7c3c3;
+   
+    height: 100vh;
+    color: antiquewhite;
+    background-image: url("../images/backgroundnetflix1");
+    image-rendering: -webkit-optimize-contrast;
+
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+    display: flex;
+    align-items: center;
+    justify-content:  center;
+    
+}
+
+.LoginContainer{
+    background-color:  #c7c3c3;
+   
+    height: 100vh;
+    color: antiquewhite;
+    background-image: url("../images/backgroundnetflix1");
+    image-rendering: -webkit-optimize-contrast;
+
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+    display: flex;
+    align-items: center;
+    justify-content:  center;
+     
+}
+
+.column{
+    background: rgb(8, 8, 8 , 0.9);
+
+    min-height: 300px;
+    max-height: 100%;
+    width: 450px;
+    box-shadow: rgba(24, 21, 21, 0.1) 0 1px 2px;
+    padding: 50px 25px;
+}
+
+.column .header{
+    padding: 20px 0;  
+}
+
+.column form{
+  display: flex;
+  flex-direction: column;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+input {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.column form input[type="text"] , 
+.column form input[type="email"] ,
+.column form input[type="password"] {
+    background-color: dimgrey;
+    font-size: 15px;
+    margin: 10px 0;
+    height: 35px;
+    border: none;
+    border-bottom: 1px solid #dedede;
+    border-radius: 6px;
+}
+
+.column form input[type="submit"] {
+    background-color: rgb(228, 13, 13);
+    color: #fdf9f9;
+    height: 36px;
+    width: auto;
+    border: none;
+    border-radius: 3px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+} 
+
+.column .header img {
+    width: 100px;
+}
+
+::placeholder {
+    color : rgb(170, 167, 167);
+    opacity : 1;
+}
+
+.signInmessage{
+    color: white;
+    outline: none;
+    text-decoration: none;
+    margin-left: 40px;
+}
+
+.signInmessage:hover {
+    text-decoration: none;
+}
+
+
+.errorMessage{
+    color: red;
+    font-size: 15px;
+    font-weight: 10px;
+    text-align: center;
+}
