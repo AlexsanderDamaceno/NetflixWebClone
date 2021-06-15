@@ -1,0 +1,368 @@
+
+
+html , 
+body{
+    height: 100%;
+    position: relative;
+    background: #000;
+}
+
+h2 {
+    text-align: center;   
+}
+
+h3 {
+    color: #e5e5e5;
+}
+
+a h3:hover{
+
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.signInContainer{
+    background-color:  #c7c3c3;
+   
+    height: 100vh;
+    color: antiquewhite;
+    background-image: url("../images/backgroundnetflix1");
+    image-rendering: -webkit-optimize-contrast;
+
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+    display: flex;
+    align-items: center;
+    justify-content:  center;
+    
+}
+
+.LoginContainer{
+    background-color:  #c7c3c3;
+   
+    height: 100vh;
+    color: antiquewhite;
+    background-image: url("../images/backgroundnetflix1");
+    image-rendering: -webkit-optimize-contrast;
+
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+    display: flex;
+    align-items: center;
+    justify-content:  center;
+     
+}
+
+.column{
+    background: rgb(8, 8, 8 , 0.9);
+
+    min-height: 300px;
+    max-height: 100%;
+    width: 450px;
+    box-shadow: rgba(24, 21, 21, 0.1) 0 1px 2px;
+    padding: 50px 25px;
+}
+
+.column .header{
+    padding: 20px 0;   
+}
+
+.column form{
+  display: flex;
+  flex-direction: column;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+input {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.column form input[type="text"] , 
+.column form input[type="email"] ,
+.column form input[type="password"] {
+    background-color: dimgrey;
+    font-size: 15px;
+    margin: 10px 0;
+    height: 35px;
+    border: none;
+    border-bottom: 1px solid #dedede;
+    border-radius: 6px;
+}
+
+.column form input[type="submit"] {
+    background-color: rgb(228, 13, 13);
+    color: #fdf9f9;
+    height: 36px;
+    width: auto;
+    border: none;
+    border-radius: 3px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+} 
+
+.column .header img {
+    width: 100px;
+}
+
+::placeholder {
+    color : rgb(170, 167, 167);
+    opacity : 1;
+}
+
+.signInmessage{
+    color: white;
+    outline: none;
+    text-decoration: none;
+    margin-left: 40px;
+}
+
+.signInmessage:hover {
+    text-decoration: underline;
+}
+
+.errorMessage{
+    color: red;
+    font-size: 15px;
+    font-weight: 10px;
+    text-align: center;
+}
+
+.previewImage, 
+.previewVideo {
+    width: 100%;
+    height: 100%;
+}
+
+.previewContainer {
+    position: relative;
+    display: flex;
+   
+}
+
+.previewOverlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+}
+
+.previewOverlay .mainDetails h3 {
+    color: white;
+    font-size: 40px;
+    margin: 15px 0;
+}
+
+.previewOverlay .mainDetails {
+    position: relative;
+    top: 35%;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mainDetails button {
+    background-color: rgba(51, 51, 51, 0.4);
+    color: #fff;
+    border: none;
+    min-width: 150px;
+    padding: 0 38px;
+    height: 50px;
+    max-height: 50px;
+    font-size: 18px;
+    border-radius: 2px;
+    margin-bottom: 15px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.mainDetails button:hover {
+    background-color: #e6e6e6;
+    color: #000;
+}
+
+
+.previewCategories {
+    padding: 0 50px;
+    background-color: black;
+}
+
+.previewCategories .category .categoryName {
+    color: rgb(172, 169, 169);
+    outline: none;
+    text-decoration: none;
+}
+
+.previewCategories .category .categoryName:hover {
+    color: white;
+}
+
+.previewContainer{
+    position: relative;
+    display: flex;
+    background-color: black;
+  
+}
+
+.previewContainer.small{
+    width:  230px; 
+    height: 129px; 
+    margin-right: 4px; 
+  display: inline-flex;
+  background-color: black;
+  
+  
+}
+
+.previewContainer.small img{
+    width:  100%; 
+    height: 100%; 
+    
+     
+}
+
+.category{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+}
+
+.entities,
+.videos {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+.entities::-webkit-scrollbar{
+    width: 0;
+}
+
+.errorBanner {
+    color: white;
+    position: absolute;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+}
+
+.season {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 50px;
+    background-color: black;
+}
+
+.episodeContainer {
+    display: inline-flex;
+    justify-content: center;
+    margin-right: 4px;
+}
+
+.episodeContainer .contents {
+    display: flex;
+    flex-direction: column;
+    width: 230px;
+}
+
+.episodeContainer img {
+  width:  100%;
+  height: auto;
+  cursor: pointer; 
+}
+
+.episodeContainer .videoInfo h4, 
+.episodeContainer .videoInfo span {
+    color: #fff;
+    width: 100%;
+    white-space: normal;
+}
+
+.episodeContainer .videoInfo{
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+body {
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;       
+}
+     
+.swiper-container {
+    width: 100%;
+    height: 100%;
+    transition: 3s ease all;   
+     
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background-color: black;
+
+
+    /* Center slide text vertically */
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    
+    
+   
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+   
+}
+
+
+
+.swiper-slide img:hover{
+    transition: 250ms all;  
+    transform: scale(1.2);
+    z-index: 20;
+
+}
+
+
+.swiper-slide:first-child:hover{
+    margin: 0 30px;
+}
+
+.swiper-slide:last-child:hover{
+    margin: 0 -30px;
+}
+
+.swiper-wrapper{
+    padding: 20px 0;
+}
+
+.swiper-container:{
+    .swiper-button-next{
+    color: blanchedalmond;
+    }
+}

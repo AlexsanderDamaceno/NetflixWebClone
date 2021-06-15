@@ -1,0 +1,45 @@
+<html>
+<div class='previewCategories'><div class='swiper-container'>
+        <div class='swiper-wrapper'>
+                          <div class='swiper-slider'><img src='../../entities/thumbnails/nbd.jpg' title='Never Back Down' alt='Move'>
+                </div><div class='swiper-slider'><img src='../../entities/thumbnails/tg.jpg' title='Top Gun' alt='Move'>
+                </div><div class='swiper-slider'><img src='../../entities/thumbnails/mec.jpg' title='Mechanic' alt='Move'>
+                </div><div class='swiper-slider'><img src='../../entities/thumbnails/nfs.jpg' title='Need for Speed' alt='Move'>
+                </div><div class='swiper-slider'><img src='../../entities/thumbnails/mi.jpg' title='Mission Impossible' alt='Move'>
+                </div>
+        </div>
+                            
+                            <div class='swiper-pagination'></div>
+                            <div class='swiper-button-prev'></div> 
+                            <div class='swiper-button-next'></div>
+                            <div class='swiper-scrollbar'></div>
+            
+                            
+               
+
+            
+                </div></div><script>
+                
+var swiper = new Swiper('.swiper-container', {
+    slidesPerView: 10, 
+    direction: 'horizontal',
+    spaceBetween: 400,
+    slidesPerGroup: 3, 
+  
+    loopFillGroupWithBlank: true,
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    scrollbar: {
+        el: '.swiper-scrollbar',
+    },
+});
+</script>
+<div class='wrapper'>
+
+</html>

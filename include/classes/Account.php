@@ -22,6 +22,23 @@ class Account {
       return false;
   }
 
+  public function get_user_username($em){
+    
+    $query = $this->$connection->prepare("SELECT * FROM  users WHERE email=:em");
+                                       
+    $query->bindValue(":em", $em);
+    $query->execute();
+
+    $result = $query->fetch();
+
+  if($result){
+     $_SESSION["username"] = $result['username'];
+     return true; 
+  }
+  else 
+    return false;
+  }
+
   public function Login($em, $pw) {
     $pw = hash("sha512", $pw);
 
