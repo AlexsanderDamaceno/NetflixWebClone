@@ -4,7 +4,7 @@ html ,
 body{
     height: 100%;
     position: relative;
-    background: #000;
+    background: #141414;
 }
 
 h2 {
@@ -12,11 +12,15 @@ h2 {
 }
 
 h3 {
-    color: #e5e5e5;
+    color: #aca9a9;
+}
+
+a {
+    text-decoration: none;
 }
 
 a h3:hover{
-
+    color: #fff;
 }
 
 img {
@@ -26,7 +30,7 @@ img {
 }
 
 .signInContainer{
-    background-color:  #c7c3c3;
+    background-color:  #ac4747;
    
     height: 100vh;
     color: antiquewhite;
@@ -40,7 +44,6 @@ img {
     display: flex;
     align-items: center;
     justify-content:  center;
-    
 }
 
 .LoginContainer{
@@ -142,12 +145,12 @@ input {
 .previewVideo {
     width: 100%;
     height: 100%;
+    max-height: 765px;
 }
 
 .previewContainer {
     position: relative;
     display: flex;
-   
 }
 
 .previewOverlay {
@@ -191,7 +194,6 @@ input {
     color: #000;
 }
 
-
 .previewCategories {
     padding: 0 50px;
     background-color: black;
@@ -211,41 +213,34 @@ input {
     position: relative;
     display: flex;
     background-color: black;
-  
+    
 }
 
 .previewContainer.small{
-    width:  230px; 
-    height: 129px; 
-    margin-right: 4px; 
-  display: inline-flex;
-  background-color: black;
-  
-  
+    width:  240px; 
+    height: 186px; 
+    margin-right: 5px; 
+    padding-bottom: 10px;
+    display: inline-flex;
+    background-color: black;
 }
+
 
 .previewContainer.small img{
     width:  100%; 
     height: 100%; 
-    
-     
+    border-radius: 5px;  
 }
+
 
 .category{
     display: flex;
     flex-direction: column;
-    padding: 10px 0;
 }
 
 .entities,
 .videos {
-    overflow-x: auto;
-    overflow-y: hidden;
     white-space: nowrap;
-}
-
-.entities::-webkit-scrollbar{
-    width: 0;
 }
 
 .errorBanner {
@@ -267,19 +262,22 @@ input {
 .episodeContainer {
     display: inline-flex;
     justify-content: center;
-    margin-right: 4px;
+
 }
 
 .episodeContainer .contents {
     display: flex;
     flex-direction: column;
-    width: 230px;
+    width: 235px;
+    height: 200px;
+    margin-right: 4px;
+   
 }
 
 .episodeContainer img {
   width:  100%;
-  height: auto;
   cursor: pointer; 
+  border-radius: 6px;
 }
 
 .episodeContainer .videoInfo h4, 
@@ -287,18 +285,19 @@ input {
     color: #fff;
     width: 100%;
     white-space: normal;
+   
 }
 
 .episodeContainer .videoInfo{
     max-height: 200px;
     overflow-y: auto;
+
 }
 
 body {
-    background: #eee;
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 14px;
-    color: #000;
+    color: #fff;
     margin: 0;
     padding: 0;       
 }
@@ -306,15 +305,45 @@ body {
 .swiper-container {
     width: 100%;
     height: 100%;
-    transition: 3s ease all;   
-     
+    transition: 3s ease all;
+}
+
+
+.swiper-container.mySwiper .swiper-button-next,
+.swiper-container.mySwiper .swiper-button-prev {
+    height: 100%;
+    width: calc(2% - 4px);
+    top: 0%;
+    bottom: 0;
+    margin: 0;
+    background-color: rgba(20, 20, 20, 0.5);
+}  
+
+.swiper-container.mySwiper .swiper-button-prev{
+    left:0;
+    border-top-right-radius:  6px;
+    border-bottom-right-radius: 6px;
+}
+  
+
+.swiper-container.mySwiper .swiper-button-next{
+    right:0;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.swiper-container.mySwiper .swiper-button-prev::after , 
+.swiper-container.mySwiper .swiper-button-next{
+    color:#fff;
+    font-size: 4vw;
+    font-weight: bold;
+    transition: transform 0.1 ease-out;
 }
 
 .swiper-slide {
     text-align: center;
     font-size: 18px;
     background-color: black;
-
 
     /* Center slide text vertically */
     display: flex;
@@ -327,42 +356,127 @@ body {
     -webkit-align-items: center;
     align-items: center;
     
-    
-   
 }
 
 .swiper-slide img {
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-   
+    object-fit: fill;
 }
-
-
 
 .swiper-slide img:hover{
     transition: 250ms all;  
     transform: scale(1.2);
     z-index: 20;
-
 }
-
 
 .swiper-slide:first-child:hover{
     margin: 0 30px;
 }
 
 .swiper-slide:last-child:hover{
-    margin: 0 -30px;
+ 
+    margin: 0 -70px;
+    border-right-color: red;
+
 }
 
 .swiper-wrapper{
     padding: 20px 0;
 }
 
-.swiper-container:{
-    .swiper-button-next{
-    color: blanchedalmond;
-    }
+.swiper-container.mySwiper{
+    padding: 0 2.0%;
+}
+
+.previewCategories.noScroll .category .entities {
+    white-space: normal;
+}
+
+.watchContainer video {
+    width: 100%;
+}
+
+
+.videoControls {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.videoControls button {
+    font-size: 50px;
+    padding: 50px;
+    color: #fff;
+    background-color: transparent;
+    border: none;
+}
+
+.TopBar{
+    position: fixed;
+    width: 100%;
+    z-index: 1; 
+    display: flex;
+    align-items: center;
+    padding: 0 60px;
+    height: 70px;
+    box-sizing: border-box;
+    min-width: 1050px;
+    transition: background-color 200ms linear;
+    
+}
+
+
+
+
+
+.TopBar.scrolled{
+    background-color: #141414;
+    transition: background-color 200ms linear;
+}
+
+.navLinks{
+    display: flex;
+    list-style: none;
+
+}
+
+.navLinks a{
+    color: #fff;
+    font-size: 14px;
+    margin-left: 20px;
+}
+
+.rightItems{
+    text-align: right;
+    flex:1;
+}
+
+.rightItems i{
+    color: #fff;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.textboxContainer{
+    padding: 100px 50px; 
+}
+
+.searchInput{
+    height: 50px;
+    width: 680px;
+    border: 1px solid #dedede;
+    background-color: transparent;
+    color: #fff;
+    font-size: 20px;
+    
+}
+
+
+.previewContainer h1{
+    color: #fff;
 }

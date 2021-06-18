@@ -36,6 +36,10 @@ class Entity{
         return $this->sqlData["preview"];
     }
 
+    public function getCategoryId(){
+      return $this->sqlData["categoryId"];
+    }
+
     public function getSeasons(){
       
       $query = $this->connection->prepare("SELECT * FROM videos WHERE entityId=:id

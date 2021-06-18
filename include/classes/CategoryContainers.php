@@ -13,7 +13,8 @@ class CategoryContainers {
         $query->execute();
 
         $html = "";
-        $html .= "<div class='previewCategories'>";
+        $html .= "<div class='previewCategories'>
+                    <h1>TV Shows </h1>";
       
         while($row = $query->fetch(PDO::FETCH_ASSOC))      
             $html .= $this->getCategoryHtml($row, null, true, true);
@@ -21,15 +22,46 @@ class CategoryContainers {
         return $html."</div>"."</br>";
     }
 
+
+      public function showTVCategories() {
+        $query = $this->connection->prepare("SELECT * FROM categories");
+        $query->execute();
+
+        $html = "";
+        $html .= "<div class='previewCategories'>
+                  <h1>TV Shows</h1>";
+      
+        while($row = $query->fetch(PDO::FETCH_ASSOC))      
+            $html .= $this->getCategoryHtml($row, null, true, false);
+
+        return $html."</div>"."</br>";
+    }
+
+
+
+    public function showCategory($categoryId, $title = null) {
+        $query = $this->connection->prepare("SELECT * FROM categories WHERE id=:id");
+        $query->bindValue(":id", $categoryId);
+        $query->execute();
+
+        $html = "";
+        $html .= "<div class='previewCategories noScroll'>";
+      
+        while($row = $query->fetch(PDO::FETCH_ASSOC))      
+            $html .= $this->getCategoryHtml($row, $title, true, true);
+
+        return $html."</div>"."</br>";
+    }
+
     private function getCategoryHtml($sqlData, $title, $tvShows, $movies) {
         $categoryId = $sqlData["id"];
-        $title = $title == null ? $sqlData["name"] : $title;
+        $name = $title == null ? $sqlData["name"] : $title;
 
         if($tvShows && $movies) {
             $entities = EntityProvider::getEntities($this->connection, $categoryId, 30);
         }
         else if($tvShows) {
-            // Get tv show entities
+            $entities = EntityProvider::getTVShowEntities($this->connection , $categoryId , 30); 
         }
         else {
             // Get movie entities
@@ -39,17 +71,42 @@ class CategoryContainers {
             return;
         }
      
-        $previewProvider = new PreviewProvider($this->con, $this->username);
+        $previewProvider = new PreviewProvider($this->connection, $this->username);
      
         $entitiesHtml = "";
       
         foreach($entities as $entity) {
-            $entitiesHtml .= "<div class='swiper-slide'>";
+            if(!$title) $entitiesHtml .= "<div class='swiper-slide'>";
             $entitiesHtml .= $previewProvider->createEntityPreviewSquare($entity);
-            $entitiesHtml .= "</div>";
+            if(!$title) $entitiesHtml .= "</div>";
         }
          
-        return "
+        $categoryHtml = "
+            <div class='category'>
+                <a href='category.php?id=$categoryId'>
+                    <h3>$name</h3>
+                </a>
+                <div class='entities'>
+        ";
+
+        if(!$title) $categoryHtml .= "
+                    <div class='swiper-container mySwiper'>
+                        <div class='swiper-wrapper'>
+        ";
+
+        $categoryHtml .= $entitiesHtml;
+
+        if(!$title) $categoryHtml .= "
+                        </div>
+                        <div class='swiper-button-prev'></div> 
+                        <div class='swiper-button-next'></div>
+                        <div class='swiper-pagination'></div>
+                        </div>
+        ";
+
+        return $categoryHtml."</div>"."</div>";
+
+        /*return "
 
         <div class='category'>
             <a href='category.php?id=$categoryId'>
@@ -63,12 +120,13 @@ class CategoryContainers {
                     
                     <div class='swiper-button-prev'></div> 
                     <div class='swiper-button-next'></div>
-
+                    <div class='swiper-pagination'></div>
 
                 </div>
             </div>          
         </div>
-        ";                  
+
+        ";*/                  
     }
 
 }

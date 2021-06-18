@@ -22,15 +22,26 @@
 
                 $videosHtml = "";
                 foreach($season->getVideos() as $video){
-
+                    $videosHtml .=  "<div class='swiper-slide'>";
                     $videosHtml .= $this->createVideoSquare($video);
+                    $videosHtml .=  "</div>";
+
                 }
 
                 $seasonsHtml .= "<div class='season'>
                                     <h3>Season $seasonNumber</h3>
+                                  
                                     <div class='videos'>
+                                    <div class='swiper-container mySwiper'>
+                                    <div class='swiper-wrapper'>
+                                    
                                         $videosHtml
+                                        </div>
+                                        <div class='swiper-button-prev'></div> 
+                                        <div class='swiper-button-next'></div>
+
                                     </div>
+                                </div>
                                 </div>";
             }
             

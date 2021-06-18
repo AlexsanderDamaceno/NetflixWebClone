@@ -10,6 +10,17 @@ class PreviewProvider {
         $this->username = $username;
     }
 
+
+    public function createTVShowPreviewVideo(){
+        $entitiesArray = EntityProvider::getTVShowEntities($this->connection , null , 1);
+        
+        if(sizeof($entitiesArray) == 0){
+            ErrorMessage::show("No tv show to display");
+        }
+
+        return $this->createPreviewVideo($entitiesArray[0]);
+    }
+
     public function  createPreviewVideo($entity){
         if($entity == null) {
             $entity = $this->getRandomEntity();
@@ -41,7 +52,6 @@ class PreviewProvider {
     }
 
 
-
     public function createEntityPreviewSquare($entity) {
         $id = $entity->getId();
         $thumbnail = $entity->getThumbnail();
@@ -52,6 +62,10 @@ class PreviewProvider {
         return "
             <a href ='entity.php?id=$id'>
                 <div class='previewContainer small'>
+                <div class='background'>
+                <div class='left'></div>
+                <div class='right'></div>
+                 </div>
                     <img src='$thumbnail'  title='$name'>
                 </div>
             </a>
