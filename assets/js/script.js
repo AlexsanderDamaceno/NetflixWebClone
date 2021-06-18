@@ -43,11 +43,48 @@ function initVideo(videoId, username) {
 
 function updateProgressTimer(videoId, username) {
     addDuration(videoId, username);
+
+    var timer;
+
+    $("video").on("playing", function(event) {
+        window.clearInterval(timer);
+        timer = window.setInterval(function() {
+            updateProgress(videoId, username, event.target.currentTime);        
+        }, 3000);
+    })
+    .on("ended", function() {
+        setFinished(videoId, username);
+        window.clearInterval(timer);
+    })
 }
 
 function addDuration(videoId, username) {
     $.post("ajax/addDuration.php", {videoId: videoId, username: username}, function(data){
-        if(data !== null && data != "") {
+        if(data !== null && data !== "") {
+            alert(data);
+        }
+    });
+}
+
+function updateProgress(videoId, username, progress) {
+    $.post("ajax/updateDuration.php", {videoId: videoId, username: username, progress : progress}, function(data){
+        if(data !== null && data !== "") {
+            alert(data);
+        }
+    });
+}
+
+function setFinished(videoId, username) {
+    $.post("ajax/setFinished.php", {videoId: videoId, username: username}, function(data){
+        if(data !== null && data !== "") {
+            alert(data);
+        }
+    });
+}
+
+function setStartTime(videoId, username) {
+    $.post("ajax/getProgress.php", {videoId: videoId, username: username}, function(data){
+        if(data !== null && data !== "") {
             alert(data);
         }
     });

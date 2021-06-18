@@ -23,8 +23,6 @@ class SearchResultsProvider {
            $html.= $this->getResultHtml($entity);
 
            return $html . "</div>"; 
-       
-
           
     
     }

@@ -37,6 +37,8 @@ class CategoryContainers {
         return $html."</div>"."</br>";
     }
 
+  
+
 
 
     public function showCategory($categoryId, $title = null) {

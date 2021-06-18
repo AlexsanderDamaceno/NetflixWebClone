@@ -3,7 +3,7 @@
 require_once("include/classes/header.php");
 
 $preview =  new PreviewProvider($connection , $userLoggedIn);
-echo $preview->createTVShowPreviewVideo(null);
+echo $preview->createMoviesPreviewVideo(null);
 
 
 $containers =  new CategoryContainers($connection , $userLoggedIn);
