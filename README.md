@@ -1,4 +1,7 @@
-:boom: ​Project Demo 
+
+## <h1>Netflix-Clone</h1>
+
+## :boom: **Project Demo**
 
 
 
@@ -6,66 +9,72 @@
 
 
 
-![](readme-files/netflix-demo.gif)             
+
+<img src="readme-files/netflix-demo.gif" width="70%" height="50%" />  
+
+
+## :bomb: **Project Photos**
+
+<img src="readme-files/loginofi.jpeg" width="50%" height="50%" />  
+<img src="readme-files/register.png" width="50%" height="50%" />
+<img src="readme-files/Screenshot from 2021-06-20 21-30-53.png" width="50%" height="50%" />
+<img src="readme-files/index.jpeg" width="50%" height="50%" />  
+<img src="readme-files/Screenshot from 2021-06-21 01-24-06.png" width="50%" height="50%" /> 
+
+
+## :fire: **Features** 
+
+:heavy_check_mark:  Login and Register  System 
+
+:heavy_check_mark:  Movies Preview 
+
+:heavy_check_mark:  Movies  Category 
+
+:heavy_check_mark:  Movies  Catalog Swiper
+
+:heavy_check_mark:  Movies  Player
+
+:heavy_check_mark:  Recommentation  system
+
+:heavy_check_mark:  Movie Progress Saver 
+
+:heavy_check_mark: Search System
 
 
 
+## :rocket:  **Used Technologies**
 
+🔨 HTML 
 
-:fire: **Features** 
+🔨 CSS 
 
-- Login and Register  System 
+🔨 PHP 
 
-- Movies Preview 
+🔨 JAVASCRIPT 
 
-- Movies  Category 
-
-- Movies  Catalog Swiper
-
-- Movies  Player
-
-- Recommentation  system
-
-- Movie Progress Saver 
-
-- Search System
+🔨 JQUERY 
 
 
 
-:rocket:  **Used Technologies**
+## :wrench:  **Building the Project**
 
-- HTML 
+:arrow_right: Use XAMPP for local web server
 
-- CSS 
+:arrow_right: Put the project folder inside XAMPP folder htdocs
 
-- PHP 
+:arrow_right: Create a database in phpmyadmin
 
-- JAVASCRIPT 
+:arrow_right: Import  Database tables for phpmyadmin
 
-- JQUERY 
-
-
-
-:wrench:  **Building the Project**
-
-- Use XAMPP for local web server
-
-- Put the project folder inside XAMPP folder htdocs
-
-- Create a database in phpmyadmin
-
-- Import  Database tables for phpmyadmin
-
-- Install swiperjs  for swiper feature
+:arrow_right: Install swiperjs  for swiper feature
 
   
 
-:construction_worker:  **Contributors**
+## :construction_worker:  **Contributors**
 
-@AlexsanderDamaceno
+@[AlexsanderDamaceno](https://github.com/AlexsanderDamaceno)
 
-@tonisidneimc
-
+@[tonisidneimc](https://github.com/tonisidneimc)
 
 
 
