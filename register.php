@@ -43,7 +43,7 @@ function getInputValue($name) {
 
 <body> 
 
-    <div class="signInContainer">
+    <div class="signInContainer" >
         <div class="column">
 
             <div class = "header">
@@ -75,7 +75,7 @@ function getInputValue($name) {
 
                 <input type="submit"   name="submitButton"   value ="Register"/>
             </form>
-            <a href="login.php"  class="sigInmessage" high>Already have an account? Sign in here!</a>
+            <a href="login.php"  class="signInmessage" high>Already have an account? Sign in!</a>
         </div>
     </div>
 </body> 

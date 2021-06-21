@@ -1,13 +1,15 @@
 <?php
- 
     
     $hideNav = true;
     require_once("include/classes/header.php");
+
     if(!isset($_GET["id"])){
         ErrorMessage::show("No ID passed into page");
     }
     $video = new Video($connection, $_GET["id"]);
     $video->incrementViews();
+
+    $upNextVideo = VideoProvider::getUpNext($connection, $video);
 
 ?>
 
@@ -17,7 +19,20 @@
         <h1><?php echo $video->getTitle(); ?></h1>
     </div>
 
-    <video controls autoplay>
+    <div class="videoControls upNext" style="display:none">
+        <button onclick="restartVideo();"><i class="fas fa-redo"></i></button>
+        <div class="upNextContainer">
+            <h2>Up next:</h2>
+            <h3><?php echo $upNextVideo->getTitle(); ?></h3>
+            <h3><?php echo $upNextVideo->getSeasonAndEpisode(); ?></h3>
+
+            <button class="playNext" onclick="watchVideo(<?php echo $upNextVideo->getId();?>)">
+                <i class="fas fa-play"></i> Play
+            </button>
+        </div>
+    </div>
+
+    <video controls autoplay onended="showUpNext()">
         <source src='<?php echo $video->getFilePath(); ?>' type="video/mp4">
     </video>
 </div>

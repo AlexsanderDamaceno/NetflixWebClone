@@ -16,7 +16,7 @@ echo "<script src='https://unpkg.com/swiper/swiper-bundle.min.js'></script>
                 
               slidesPerView: 5,
               slidesPerGroup: 3,
-              spaceBetween: 5, 
+              spaceBetween: 2, 
               loopFillGroupWithBlank: true,
 
                 navigation: {

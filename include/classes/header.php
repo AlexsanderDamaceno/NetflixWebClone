@@ -7,7 +7,8 @@
  require_once("include/classes/ErrorMessage.php");
  require_once("include/classes/SeasonProvider.php");
  require_once("include/classes/Season.php");
- require_once("include/classes/Video.php");  
+ require_once("include/classes/Video.php");
+ require_once("include/classes/VideoProvider.php"); 
 
       if(!isset($_SESSION["useremail"])){
             header("Location: login.php");
