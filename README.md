@@ -10,16 +10,16 @@
 
 
 
-<img src="readme-files/netflix-demo.gif" width="70%" height="50%" />  
+<img src="readme-files/netflix-demo.gif" width="100%" height="50%" />  
 
 
 ## :bomb: **Project Photos**
 
-<img src="readme-files/loginofi.jpeg" width="50%" height="50%" />  
-<img src="readme-files/register.png" width="50%" height="50%" />
-<img src="readme-files/Screenshot from 2021-06-20 21-30-53.png" width="50%" height="50%" />
-<img src="readme-files/index.jpeg" width="50%" height="50%" />  
-<img src="readme-files/Screenshot from 2021-06-21 01-24-06.png" width="50%" height="50%" /> 
+<img src="readme-files/loginofi.jpeg" width="100%" height="50%" />  
+<img src="readme-files/register.png" width="100%" height="50%" />
+<img src="readme-files/Screenshot from 2021-06-20 21-30-53.png" width="100%" height="50%" />
+<img src="readme-files/index.jpeg" width="100%" height="50%" />  
+<img src="readme-files/Screenshot from 2021-06-21 01-24-06.png" width="100%" height="50%" /> 
 
 
 ## :fire: **Features** 
